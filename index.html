@@ -1883,18 +1883,23 @@
 
   <div class="contact-grid">
     <div class="reveal">
-      <form onsubmit="return false;">
+      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+        <input type="hidden" name="form-name" value="kontakt">
+        <p style="display:none;">
+          <input name="bot-field">
+        </p>
+
         <label class="contact-form-label">Ihr Name</label>
-        <input type="text" class="contact-form-input" placeholder="Max Mustermann">
+        <input type="text" name="name" class="contact-form-input" placeholder="Max Mustermann" required>
 
         <label class="contact-form-label">Unternehmen</label>
-        <input type="text" class="contact-form-input" placeholder="Mustermann GmbH">
+        <input type="text" name="unternehmen" class="contact-form-input" placeholder="Mustermann GmbH">
 
         <label class="contact-form-label">E-Mail</label>
-        <input type="email" class="contact-form-input" placeholder="kontakt@mustermann.de">
+        <input type="email" name="email" class="contact-form-input" placeholder="kontakt@mustermann.de" required>
 
         <label class="contact-form-label">Beratungsschwerpunkt</label>
-        <select class="contact-form-select">
+        <select name="schwerpunkt" class="contact-form-select">
           <option value="" disabled selected>Bitte wählen …</option>
           <option>Qualitätsmanagement & Audits</option>
           <option>Lieferantenqualifizierung</option>
@@ -1907,7 +1912,7 @@
         </select>
 
         <label class="contact-form-label">Ihre Nachricht</label>
-        <textarea class="contact-form-textarea" placeholder="Beschreiben Sie kurz Ihr Vorhaben …"></textarea>
+        <textarea name="nachricht" class="contact-form-textarea" placeholder="Beschreiben Sie kurz Ihr Vorhaben …" required></textarea>
 
         <button type="submit" class="form-submit">Beratung anfragen</button>
       </form>
