@@ -719,6 +719,220 @@
     transform: translateY(0);
   }
 
+  /* ═══════════════════════════════════════════
+     MOBILE RESPONSIVE – iOS & Android
+     Breakpoints: 768px (tablet), 480px (phone)
+  ═══════════════════════════════════════════ */
+
+  @media (max-width: 768px) {
+
+    /* Cursor ausblenden auf Touch-Geräten */
+    .cursor, .cursor-ring { display: none; }
+    body { cursor: auto; }
+
+    /* NAV */
+    nav {
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .nav-links { display: none; }
+    .nav-cta {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Hamburger Menu */
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      margin-left: auto;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px; height: 1.5px;
+      background: var(--gold);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.98);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-mobile-menu a:hover { color: var(--gold); }
+    .nav-mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* HERO */
+    #hero {
+      padding: 7rem 1.5rem 3rem;
+      min-height: auto;
+      align-items: flex-start;
+    }
+    .hero-content { max-width: 100%; }
+    .hero-headline { font-size: clamp(2.2rem, 9vw, 3rem); line-height: 1.1; }
+    .hero-sub { font-size: 0.9rem; max-width: 100%; margin-bottom: 2rem; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .btn-primary { padding: 0.9rem 2rem; font-size: 0.75rem; }
+
+    /* Hero stats: unterhalb statt rechts */
+    .hero-stats {
+      position: static;
+      transform: none;
+      animation: none;
+      opacity: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      width: 100%;
+      gap: 1.5rem;
+    }
+    .stat-item { text-align: left; }
+    .stat-number { font-size: 2.2rem; }
+    .stat-divider { margin-left: 0; }
+
+    /* SECTIONS – weniger Padding */
+    section { padding: 4rem 1.5rem; }
+    #lang-banner { padding: 3rem 1.5rem; }
+    #quote-section { padding: 4rem 1.5rem; }
+
+    /* ABOUT */
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    /* LANG BANNER */
+    .lang-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .lang-quote { font-size: 1.4rem; }
+
+    /* EXPERIENCE TIMELINE */
+    .timeline-grid { grid-template-columns: 1fr; gap: 0; }
+    .timeline { padding-left: 1.5rem; margin-top: 2rem; }
+    .timeline-item { padding-left: 2rem; }
+    .timeline-dot { left: -1.9rem; }
+    .timeline-role { font-size: 1.1rem; }
+
+    /* SERVICES */
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 2rem 1.5rem; }
+    .service-card[style*="grid-column"] { grid-column: auto; }
+
+    /* EVENTS */
+    .events-grid { grid-template-columns: 1fr; }
+    .event-card { padding: 2rem 1.5rem; }
+
+    /* MARKET */
+    .market-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+    /* PROCESS */
+    .process-steps {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .process-steps::before { display: none; }
+    .step { padding: 0 0 2rem; }
+
+    /* CONTACT */
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+    /* FOOTER */
+    footer {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+
+    /* Hero noch kompakter */
+    #hero { padding: 6rem 1.2rem 2.5rem; }
+    .hero-headline { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+    .hero-stats { flex-direction: column; gap: 1.2rem; }
+
+    /* Sections */
+    section { padding: 3rem 1.2rem; }
+    #lang-banner { padding: 2.5rem 1.2rem; }
+    #quote-section { padding: 3rem 1.2rem; }
+
+    /* Process: 1 Spalte */
+    .process-steps { grid-template-columns: 1fr; }
+
+    /* Profil Card */
+    .profile-card { padding: 1.5rem; }
+
+    /* Service/Event Cards */
+    .service-card,
+    .event-card { padding: 1.5rem 1.2rem; }
+
+    /* Nav */
+    nav { padding: 1rem 1.2rem; }
+
+    /* Footer */
+    footer { padding: 2rem 1.2rem; }
+    .footer-links { gap: 0.75rem; }
+    .footer-links a { font-size: 0.65rem; }
+
+    /* Kontaktformular: grössere Eingaben für Touch */
+    .contact-form-input,
+    .contact-form-select,
+    .contact-form-textarea {
+      font-size: 1rem;
+      padding: 1rem 1rem;
+    }
+    .form-submit {
+      padding: 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    /* Quote Section */
+    .quote-text { font-size: 1.3rem; }
+    #quote-section::before { font-size: 10rem; }
+
+    /* Timeline */
+    .timeline { padding-left: 1.2rem; }
+    .timeline-item { padding-left: 1.5rem; padding-bottom: 2.5rem; }
+    .timeline-dot { left: -1.6rem; }
+  }
+
+  /* Hamburger nur auf Mobile sichtbar */
+  .nav-hamburger { display: none; }
+
+  /* iOS Safari: verhindert Zoom bei Input-Fokus */
+  @media (max-width: 768px) {
+    input, select, textarea { font-size: 16px !important; }
+  }
+
   /* FLOATING LINE DECORATION */
   .deco-line {
     position: absolute;
@@ -960,7 +1174,21 @@
     <li><a href="#market">Markt</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Kontakt</a>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#about" onclick="toggleMenu()">Über uns</a>
+  <a href="#experience" onclick="toggleMenu()">Erfahrung</a>
+  <a href="#services" onclick="toggleMenu()">Leistungen</a>
+  <a href="#events" onclick="toggleMenu()">Events</a>
+  <a href="#market" onclick="toggleMenu()">Markt</a>
+  <a href="#contact" onclick="toggleMenu()" style="color:var(--gold); border:1px solid var(--gold); padding:0.7rem 2rem;">Kontakt</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1648,42 +1876,55 @@
 </footer>
 
 <script>
-  // Custom cursor
+  // ── Custom Cursor (nur Desktop) ──────────────────
+  const isTouchDevice = () => window.matchMedia('(hover: none)').matches;
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
   let mx = 0, my = 0, rx = 0, ry = 0;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-  });
-
-  function animateRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.transform = `translate(${rx - 16}px, ${ry - 16}px)`;
-    requestAnimationFrame(animateRing);
+  if (!isTouchDevice()) {
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+    });
+    function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.transform = `translate(${rx - 16}px, ${ry - 16}px)`;
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button, .service-card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width = '48px'; ring.style.height = '48px'; ring.style.opacity = '0.8';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width = '32px'; ring.style.height = '32px'; ring.style.opacity = '0.5';
+      });
+    });
   }
-  animateRing();
 
-  document.querySelectorAll('a, button, .service-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      ring.style.width = '48px'; ring.style.height = '48px';
-      ring.style.opacity = '0.8';
-    });
-    el.addEventListener('mouseleave', () => {
-      ring.style.width = '32px'; ring.style.height = '32px';
-      ring.style.opacity = '0.5';
-    });
+  // ── Hamburger Menu ────────────────────────────────
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const ham = document.getElementById('hamburger');
+    const isOpen = menu.classList.toggle('open');
+    ham.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  // Schließen beim Klick außerhalb
+  document.getElementById('mobileMenu').addEventListener('click', function(e) {
+    if (e.target === this) toggleMenu();
   });
 
-  // Navbar scroll
+  // ── Navbar Scroll ────────────────────────────────
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  }, { passive: true });
 
-  // Reveal on scroll
+  // ── Reveal on Scroll ─────────────────────────────
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -1692,16 +1933,18 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  // Smooth scroll nav
+  // ── Smooth Scroll ────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        const offset = 70;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
       }
     });
   });
