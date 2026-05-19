@@ -1883,11 +1883,10 @@
 
   <div class="contact-grid">
     <div class="reveal">
-      <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
-        <input type="hidden" name="form-name" value="kontakt">
-        <p style="display:none;">
-          <input name="bot-field">
-        </p>
+      <form action="https://formspree.io/f/mojbjlnd" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage – GG Consulting">
+        <input type="hidden" name="_next" value="https://gg-consulting.netlify.app/success.html">
+        <input type="hidden" name="_language" value="de">
 
         <label class="contact-form-label">Ihr Name</label>
         <input type="text" name="name" class="contact-form-input" placeholder="Max Mustermann" required>
@@ -1913,6 +1912,17 @@
 
         <label class="contact-form-label">Ihre Nachricht</label>
         <textarea name="nachricht" class="contact-form-textarea" placeholder="Beschreiben Sie kurz Ihr Vorhaben …" required></textarea>
+
+        <label class="contact-form-label">Wie haben Sie uns gefunden?</label>
+        <select name="quelle" class="contact-form-select">
+          <option value="" disabled selected>Bitte wählen …</option>
+          <option>Google-Suche</option>
+          <option>LinkedIn</option>
+          <option>Empfehlung</option>
+          <option>AHK Tunesien</option>
+          <option>GIZ</option>
+          <option>Anderes</option>
+        </select>
 
         <button type="submit" class="form-submit">Beratung anfragen</button>
       </form>
