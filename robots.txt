@@ -1,4 +1,9 @@
+# robots.txt – GG Consulting
+# Erlaubt allen Suchmaschinen-Crawlern den Zugriff auf die gesamte Seite
+# und zeigt ihnen, wo die Sitemap liegt.
+
 User-agent: *
 Allow: /
 
 Sitemap: https://gg-consulting.netlify.app/sitemap.xml
+
