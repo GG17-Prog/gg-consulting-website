@@ -102,21 +102,21 @@
   rel="stylesheet">
 <style>
   :root {
-    /* Farbkonzept B „Weiß & Marine“ – Variablennamen bleiben aus Kompatibilitätsgründen:
-       --dark* = helle Flächen, --gold* = Marine-Akzent */
-    --gold: #1B3A6B;
-    --gold-light: #2E5496;
-    --gold-dim: #8DA2C4;
-    --dark: #F8F7F4;
-    --dark-2: #FFFFFF;
-    --dark-3: #F1EFEA;
-    --dark-4: #E6E3DC;
-    --dark-5: #D9D5CC;
-    --text-primary: #14213D;
-    --text-secondary: #4A5568;
-    --text-muted: #6B7585;
-    --border: rgba(27, 58, 107, 0.16);
-    --border-subtle: rgba(20, 33, 61, 0.08);
+    /* Farbkonzept A „Navy & Messing“ – Variablennamen bleiben aus Kompatibilitätsgründen:
+       --dark* = Navy-Flächen, --gold* = Messing-Akzent */
+    --gold: #C2A25A;
+    --gold-light: #DCC285;
+    --gold-dim: #8C7440;
+    --dark: #0B1626;
+    --dark-2: #0F1C2F;
+    --dark-3: #15253B;
+    --dark-4: #1C2F48;
+    --dark-5: #243A56;
+    --text-primary: #F3F1EC;
+    --text-secondary: #B4BCC8;
+    --text-muted: #7A8699;
+    --border: rgba(194, 162, 90, 0.22);
+    --border-subtle: rgba(255, 255, 255, 0.07);
   }
 
   *,
@@ -178,13 +178,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 5rem;
-    background: linear-gradient(to bottom, rgba(248, 247, 244, 0.95), transparent);
+    background: linear-gradient(to bottom, rgba(11, 22, 38, 0.95), transparent);
     backdrop-filter: blur(2px);
     transition: background 0.4s;
   }
 
   nav.scrolled {
-    background: rgba(248, 247, 244, 0.97);
+    background: rgba(11, 22, 38, 0.97);
     border-bottom: 1px solid var(--border);
   }
 
@@ -270,16 +270,16 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(27, 58, 107, 0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(27, 58, 107, 0.03) 0%, transparent 60%);
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(194, 162, 90, 0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(194, 162, 90, 0.03) 0%, transparent 60%);
   }
 
   .hero-grid-lines {
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(27, 58, 107, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(27, 58, 107, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(194, 162, 90, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(194, 162, 90, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
   }
@@ -511,7 +511,7 @@
   .profile-initials {
     width: 72px;
     height: 72px;
-    background: rgba(27, 58, 107, 0.1);
+    background: rgba(194, 162, 90, 0.1);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -586,7 +586,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(27, 58, 107, 0.05) 0%, transparent 60%);
+    background: linear-gradient(135deg, rgba(194, 162, 90, 0.05) 0%, transparent 60%);
     opacity: 0;
     transition: opacity 0.4s;
   }
@@ -603,7 +603,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 4rem;
     font-weight: 300;
-    color: rgba(27, 58, 107, 0.12);
+    color: rgba(194, 162, 90, 0.12);
     position: absolute;
     top: 1.5rem;
     right: 2rem;
@@ -612,7 +612,7 @@
   }
 
   .service-card:hover .service-number {
-    color: rgba(27, 58, 107, 0.25);
+    color: rgba(194, 162, 90, 0.25);
   }
 
   .service-icon {
@@ -652,7 +652,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    border: 1px solid rgba(20, 33, 61, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 0.25rem 0.65rem;
   }
 
@@ -838,7 +838,7 @@
     content: '"';
     font-family: 'Cormorant Garamond', serif;
     font-size: 20rem;
-    color: rgba(27, 58, 107, 0.04);
+    color: rgba(194, 162, 90, 0.04);
     position: absolute;
     top: -3rem;
     left: 50%;
@@ -1116,7 +1116,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(248, 247, 244, 0.98);
+      background: rgba(11, 22, 38, 0.98);
       z-index: 99;
       flex-direction: column;
       align-items: center;
@@ -1533,7 +1533,7 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    background: linear-gradient(to bottom, var(--gold), rgba(27, 58, 107, 0.1));
+    background: linear-gradient(to bottom, var(--gold), rgba(194, 162, 90, 0.1));
   }
 
   .timeline-item {
@@ -1559,7 +1559,7 @@
 
   .timeline-dot.active {
     background: var(--gold);
-    box-shadow: 0 0 12px rgba(27, 58, 107, 0.4);
+    box-shadow: 0 0 12px rgba(194, 162, 90, 0.4);
   }
 
   .timeline-period {
@@ -1616,7 +1616,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(27, 58, 107, 0.08);
+    background: rgba(194, 162, 90, 0.08);
     border: 1px solid var(--border);
     padding: 0.35rem 0.9rem;
     font-size: 0.68rem;
@@ -1712,7 +1712,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     color: var(--text-muted);
-    border: 1px solid rgba(20, 33, 61, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 0.2rem 0.6rem;
   }
 </style>
