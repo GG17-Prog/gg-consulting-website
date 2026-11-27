@@ -2377,10 +2377,10 @@
 
       <div class="contact-grid">
         <div class="reveal">
-          <form action="https://formspree.io/f/mojbjlnd" method="POST">
-            <input type="hidden" name="_subject" value="Neue Anfrage – GG Consulting">
-            <input type="hidden" name="_next" value="https://gg-consulting.netlify.app/success.html">
-            <input type="hidden" name="_language" value="de">
+          <form name="kontakt" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="kontakt">
+            <input type="hidden" name="subject" value="Neue Kundenanfrage – GG Consulting">
+            <p hidden><label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
             <label class="contact-form-label">Ihr Name</label>
             <input type="text" name="name" class="contact-form-input" placeholder="Max Mustermann" required>
